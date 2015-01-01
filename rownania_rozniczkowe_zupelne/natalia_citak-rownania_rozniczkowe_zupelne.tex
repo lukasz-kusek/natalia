@@ -1,0 +1,762 @@
+\documentclass[11pt]{beamer} %
+%\documentclass[11pt,handout]{beamer} %
+\usepackage[latin2]{inputenc}
+\usepackage[polish]{babel}
+\usepackage[OT4]{fontenc}
+\usepackage{amsfonts}
+\usepackage{amsthm}
+\usepackage{multirow}
+\usepackage{graphicx}
+\usepackage{array}
+
+%\usepackage{handoutWithNotes}
+%\pgfpagesuselayout{2 on 1 with notes landscape}[a4paper,border shrink=5mm]
+
+\usetheme{Natalia}
+\beamersetaveragebackground{blue!13}
+
+\title{Równanie ró¿niczkowe zupe³ne. Czynnik ca³kuj±cy.}
+\author{Natalia Citak}
+\date{2 marzec 2010}
+
+\institute{Uniwersytet Rolniczy im. Hugona Ko³³±taja w Krakowie}
+
+
+\begin{document}
+
+\begin{frame}[allowframebreaks]
+	\titlepage
+\end{frame}
+
+\section{Definicje wstêpne}
+
+\subsection{Obszar jednospójny}
+
+\begin{frame}
+\frametitle{Obszar jednospójny - definicja}
+
+\setbeamercovered{invisible}
+
+\begin{columns}
+\begin{column}{0.4\textwidth}
+
+\begin{block}{Obszar jednospójny}
+Obszar jednospójny, to zbiór
+\begin{itemize}
+\item<2-> otwarty,
+\item<3-> spójny,
+\item<4-> ograniczony
+\item<5-> i~taki, ¿e uzupe³nienie do ca³ej przestrzeni jest zbiorem spójnym.
+\end{itemize}
+\end{block}
+
+\end{column}
+\begin{column}{0.6\textwidth}
+
+\uncover<6->{
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\textbf{Ko³o} jest obszarem jednospójnym
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{kolo.png}
+\end{column}
+
+\end{columns}
+}
+
+\uncover<7->{
+\begin{columns}
+\begin{column}{0.4\textwidth}
+\textbf{Pier¶cieñ} nie jest obszarem jednospójnym
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\includegraphics[width=0.9\textwidth]{pierscien.png}
+\end{column}
+
+\end{columns}
+}
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\subsection{Ró¿niczka zupe³na - definicja}
+
+
+\begin{frame}
+\frametitle{Ró¿niczka zupe³na - definicja}
+
+\begin{exampleblock}{Za³o¿enia}
+\uncover<2->{
+Funkcje $P(x,y)$ i~$Q(x,y)$ s± klasy $C^0$ w~obszarze $D$.\\
+}
+\uncover<3->{
+Funkcja $F(x,y)$ jest klasy $C^1$ w~obszarze $D$
+} 
+\end{exampleblock}
+
+\medskip
+
+\uncover<4->{
+\begin{block}{Ró¿niczka zupe³na}
+Wyra¿enie
+
+\begin{equation}
+\label{rozniczka_zupelna}
+P(x,y) dx + Q(x,y) dy
+\end{equation}
+
+jest \textbf{ró¿niczk± zupe³n±} funkcji $F(x,y)$ je¿eli zachodz± zwi±zki
+
+\begin{equation}
+\label{warunki}
+\frac{\partial F}{\partial x} = P(x,y), \qquad \frac{\partial F}{\partial y} = Q(x,y)
+\end{equation}
+
+w~ka¿dym punkcie obszaru $D$.
+
+\end{block}
+}
+
+\end{frame}
+
+\subsection{Ró¿niczka zupe³na - warunek konieczny i wystarczaj±cy}
+
+\begin{frame}
+\frametitle{Ró¿niczka zupe³na - warunek konieczny i~wystarczaj±cy}
+
+\begin{exampleblock}{Za³o¿enie}
+\uncover<2->{
+Funkcje $P(x,y)$ i~$Q(x,y)$ s± klasy $C^1$ w~obszarze jednospójnym $D$.
+} 
+\end{exampleblock}
+
+\medskip
+
+\uncover<3->{
+\begin{alertblock}{Warunek konieczny i~wystarczaj±cy}
+Warunkiem koniecznym i~wystarczaj±cym na to, aby wyra¿enie (\ref{rozniczka_zupelna}) by³o \textbf{ró¿niczk± zupe³n±} w~tym obszarze, jest spe³nienie równo¶ci
+
+\begin{equation}
+\label{warunek}
+\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\end{equation}
+
+\medskip
+
+w~ka¿dym punkcie obszaru $D$.
+\end{alertblock}
+}
+
+\end{frame}
+
+
+\section{Równanie ró¿niczkowe zupe³ne}
+
+\subsection{Definicja}
+
+\begin{frame}
+\frametitle{Równanie ró¿niczkowe zupe³ne - definicja}
+
+\begin{exampleblock}{Za³o¿enie}
+\uncover<2->{
+Wyra¿enie
+
+\begin{equation}
+\label{zalozenie_rownanie_rozniczkowe_zupelne}
+P(x,y) dx + Q(x,y) dy
+\end{equation}
+
+\medskip
+
+jest \textbf{ró¿niczk± zupe³n±} pewnej funkcji dwóch zmiennych $F(x,y)$ okre¶lonej w~obszarze $D$
+}
+\end{exampleblock}
+
+\medskip
+
+\uncover<3->{
+\begin{block}{Równanie ró¿niczkowe zupe³ne}
+
+\textbf{Równaniem ró¿niczkowym zupe³nym} nazywamy równanie ró¿niczkowe rzêdu pierwszego postaci
+
+\begin{equation}
+\label{rownanie_rozniczkowe_zupelne}
+P(x,y) + Q(x,y)\frac{dy}{dx} = 0
+\end{equation}
+
+\end{block}
+}
+
+
+\end{frame}
+
+
+\subsection{Rozwi±zania równania zupe³nego}
+
+\begin{frame}
+\frametitle{Rozwi±zania równania zupe³nego}
+
+\begin{exampleblock}{Za³o¿enia}
+\begin{itemize}
+\item<2-> $C$ jest sta³± dowoln± ca³kowania
+\item<3-> punkty $(x,y)$ nale¿± do obszaru $D$
+\item<4-> wyra¿enie (\ref{rozniczka_zupelna}) jest przy podanych za³o¿eniach \textbf{ró¿niczk± zupe³n±} funkcji $F(x,y)$
+\end{itemize}
+\end{exampleblock}
+
+\medskip
+
+\uncover<5->{
+\begin{block}{Rozwi±zania równania zupe³nego}
+Je¿eli spe³nione s± za³o¿enia, to równanie
+
+\begin{equation}
+F(x,y) = C
+\end{equation}
+
+okre¶la \textbf{wszystkie rozwi±zania równania zupe³nego} (\ref{rownanie_rozniczkowe_zupelne}).
+\end{block}
+}
+\end{frame}
+
+
+\subsection{Przyk³ad}
+
+\begin{frame}
+\frametitle{Równanie ró¿niczkowe zupe³ne - Przyk³ad}
+
+\begin{block}{Zadanie}
+Rozwi±zaæ równanie
+\begin{equation}
+\label{zadanie_1}
+4x^3 + 6xy^3 + \left(9x^2 y^2 + 3\right) \: y' = 0
+\end{equation}
+\end{block}
+
+\smallskip
+
+\uncover<2->{
+Sprawdzamy, czy równanie (\ref{zadanie_1}) jest \textbf{ró¿niczk± zupe³n±}.
+
+\begin{columns}
+\begin{column}{0.6\textwidth}
+\begin{exampleblock}{}
+\begin{eqnarray*}
+P(x,y) & = & 4x^3 + 6xy^3 \\
+Q(x,y) & = & 9x^2 y^2 + 3
+\end{eqnarray*}
+\end{exampleblock}
+}
+\uncover<3->{
+Sk±d
+\begin{exampleblock}{}
+\[
+\frac{\partial P}{\partial y} = 18xy^2 \qquad \frac{\partial Q}{\partial x} = 18xy^2
+\]
+\end{exampleblock}
+}
+\end{column}
+\begin{column}{0.4\textwidth}
+\uncover<4->{
+a wiêc \textbf{warunek (\ref{warunek}) jest spe³niony} dla ka¿dej pary liczb $(x,y)$, tzn. obszarem $D$ mo¿e byæ ka¿dy jednospójny obszar p³aski, w~szczególno¶ci ca³a p³aszczyzna.
+}
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Równanie ró¿niczkowe zupe³ne - Przyk³ad}
+
+
+Z pierwszego z warunków (\ref{warunki}) mamy
+
+\begin{exampleblock}{}
+\[
+\frac{\partial F}{\partial x} = P(x,y) \quad \Rightarrow \quad \frac{\partial F}{\partial x} = 4x^3 + 6xy^3
+\]
+\end{exampleblock}
+\uncover<2->{
+sk±d
+\begin{exampleblock}{}
+\[
+F(x,y) = \int \left(4x^3 + 6xy^3 \right) dx
+\]
+\end{exampleblock}
+}
+\uncover<3->{
+to znaczy
+
+\begin{exampleblock}{}
+\[
+F(x,y) = x^4 + 3x^2 y^3 + \varphi(y)
+\]
+\end{exampleblock}
+
+\medskip
+
+gdzie zamiast sta³ej dowolnej ca³kowania $C$ (liczbowej) u¿yli¶my dowolnej ró¿niczkowalnej funkcji $\varphi(y)$.
+}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Równanie ró¿niczkowe zupe³ne - Przyk³ad}
+
+Funkcjê $\varphi(y)$ wyznaczamy z~drugiego z~warunków (\ref{warunki}); mamy
+
+\begin{exampleblock}{}
+\[
+\frac{\partial F}{\partial y} = 9 x^2 y^2 + \varphi'(y) \quad \equiv \quad 9 x^2y^2 + 3 = Q(x,y)
+\]
+\end{exampleblock}
+
+\medskip
+
+sk±d $\varphi'(y) = 3$, tzn. $\varphi(y) = 3y$.
+
+\bigskip
+
+\uncover<2->{
+\begin{alertblock}{}
+Otrzymali¶my
+
+\[
+F(x,y) = x^4 + 3x^2 y^3 + 3y
+\]
+
+a wiêc wszystkie krzywe ca³kowe równania (\ref{zadanie_1}) tworz± rodzinê linii
+
+\[
+x^4 + 3x^2 y^3 + 3y = C
+\]
+\end{alertblock}
+}
+\end{frame}
+
+
+\section{Równanie ró¿niczkowe sprowadzalne do zupe³nego}
+
+\subsection{Równanie ró¿niczkowe nie spe³niaj±ce za³o¿enia zupe³nego}
+
+\begin{frame}
+\frametitle{Równanie ró¿niczkowe sprowadzalne do zupe³nego}
+
+\begin{columns}
+\begin{column}{0.6\textwidth}
+
+Wróæmy do równania (\ref{rownanie_rozniczkowe_zupelne})
+\begin{block}{}
+
+\begin{equation}
+\label{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}
+P(x,y) + Q(x,y)\frac{dy}{dx} = 0
+\end{equation}
+
+\end{block}
+
+\uncover<2->{
+i przyjmijmy, ¿e
+
+\begin{exampleblock}{}
+funkcje $P(x,y)$ i~$Q(x,y)$ s± klasy $C^1$ w~obszarze jednospójnym $D$
+\end{exampleblock}
+}
+
+\uncover<3->{
+oraz, ¿e \textbf{niespe³niony} jest \textbf{warunek (\ref{warunek})}
+
+\begin{exampleblock}{}
+
+\[
+\frac{\partial P}{\partial y} = \frac{\partial Q}{\partial x}
+\]
+
+w~ka¿dym punkcie obszaru $D$.
+
+\end{exampleblock}
+}
+\end{column}
+
+\begin{column}{0.4\textwidth}
+
+\uncover<4->{
+czyli \textbf{niespe³nione} jest \textbf{za³o¿enie (\ref{zalozenie_rownanie_rozniczkowe_zupelne})}, wiêc
+
+\begin{exampleblock}{}
+\[
+P(x,y) dx + Q(x,y) dy
+\]
+
+\textbf{nie jest ró¿niczk± zupe³n±} funkcji $F(x,y)$.
+
+\end{exampleblock}
+}
+\bigskip
+
+\uncover<5->{
+W tym przypadku równanie postaci (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}) \textbf{nie jest} równaniem ró¿niczkowym \textbf{zupe³nym}.
+}
+
+\end{column}
+\end{columns}
+
+\end{frame}
+
+\subsection{Czynnik ca³kuj±cy}
+
+\begin{frame}
+\frametitle{Czynnik ca³kuj±cy}
+
+Mo¿na wykazaæ, ¿e dla ka¿dego równania ró¿niczkowego postaci (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}) \textbf{istnieje nieskoñczenie wiele funkcji}
+
+\begin{block}{}
+\[
+\mu(x,y) \not\equiv 0
+\]
+\end{block}
+
+w~rozpatrywanym obszarze, ¿e je¿eli \textbf{pomno¿ymy} przez t± \textbf{funkcjê obie strony równania (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego})}, \uncover<2->{ to otrzymane w ten sposób równanie
+
+\begin{block}{}
+\begin{equation}
+\mu(x,y) \: P(x,y) + \mu(x,y) \: Q(x,y) \frac{dy}{dx} = 0
+\end{equation}
+\end{block}{}
+
+\textbf{jest} równaniem \textbf{zupe³nym},} \uncover<3->{ tzn. spe³niony jest warunek (\ref{warunek}) dla równania (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}), tzn.
+
+\begin{block}{}
+\begin{equation}
+\label{warunek_czynnik_calkujacy}
+\frac{\partial \left(\mu \: P\right)}{\partial y} = \frac{\partial \left(\mu \: Q\right)}{\partial x} 
+\end{equation}
+\end{block}
+}
+\end{frame}
+
+\subsection{Znajdowanie czynnika ca³kuj±cego}
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego}
+
+Znalezienie czynników ca³kuj±cych w ogólnym przypadku prowadzi do rozwi±zania równania ró¿niczkowego (\ref{warunek_czynnik_calkujacy})
+
+\begin{block}{}
+\[
+\frac{\partial \left(\mu \: P\right)}{\partial y} = \frac{\partial \left(\mu \: Q\right)}{\partial x} 
+\]
+\end{block}
+
+rzêdu pierwszego o~pochodnych cz±stkowych, z~funkcj± niewiadom± $\mu(x,y)$, które jest na ogó³ trudniejsze do rozwi±zania ni¿ równanie (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}).
+
+\bigskip
+
+\uncover<2->{
+W pewnych specjalnych przypadkach jednak ³atwo jest znale¼æ czynnik ca³kuj±cy.
+}
+
+\bigskip
+
+\uncover<3->{
+Na kolejnych slajdach przedstawione zostanie kilka najprostszych.
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przypadek I}
+
+\begin{columns}
+\begin{column}{0.43\textwidth}
+
+\begin{exampleblock}{Za³o¿enia}
+\begin{itemize}
+\item<2-> Funkcje $P(x,y)$ i~$Q(x,y)$ s± klasy $C^1$ w~obszarze jednospójnym $D$
+\item<3-> $Q(x,y) \neq 0$
+\item<4-> wyra¿enie
+
+\[
+\frac{1}{Q(x,y)} \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right)
+\]
+
+jest \textbf{funkcj± tylko jednej zmiennej} $x$
+\end{itemize}
+\end{exampleblock}
+
+\end{column}
+
+\begin{column}{0.57\textwidth}
+
+\uncover<5->{
+Je¿eli spe³nione s± za³o¿enia, to istnieje \textbf{czynnik ca³kuj±cy $\mu(x)$} równania (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}), który jest \textbf{funkcj± tylko zmiennej $x$}, okre¶lony równo¶ci±
+
+\begin{block}{}
+\[
+\mu(x) = \exp \left\{\int \frac{1}{Q} \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right) \right\}
+\]
+\end{block}
+}
+
+\end{column}
+\end{columns}
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przypadek II}
+
+\begin{columns}
+\begin{column}{0.43\textwidth}
+
+\begin{exampleblock}{Za³o¿enia}
+\begin{itemize}
+\item<2-> Funkcje $P(x,y)$ i~$Q(x,y)$ s± klasy $C^1$ w~obszarze jednospójnym $D$
+\item<3-> $P(x,y) \neq 0$
+\item<4-> wyra¿enie
+
+\[
+\frac{1}{P(x,y)} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right)
+\]
+
+jest \textbf{funkcj± tylko jednej zmiennej} $y$
+\end{itemize}
+\end{exampleblock}
+
+\end{column}
+
+\begin{column}{0.57\textwidth}
+
+\uncover<5->{
+Je¿eli spe³nione s± za³o¿enia, to istnieje \textbf{czynnik ca³kuj±cy $\mu(y)$} równania (\ref{rownanie_rozniczkowe_sprowadzalne_do_zupelnego}), który jest \textbf{funkcj± tylko zmiennej $y$}, okre¶lony równo¶ci±
+
+\begin{block}{}
+\[
+\mu(y) = \exp \left\{\int \frac{1}{P} \left(\frac{\partial Q}{\partial x} - \frac{\partial P}{\partial y} \right) \right\}
+\]
+\end{block}
+}
+
+\end{column}
+\end{columns}
+
+
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przypadek III}
+
+\begin{exampleblock}{Za³o¿enia}
+\begin{itemize}
+\item<2-> Funkcje $P(x,y)$ i~$Q(x,y)$ s± klasy $C^1$ w~obszarze jednospójnym $D$
+\item<3-> istniej± takie dwie funkcje $f(x)$ i $g(y)$ spe³niaj±ce to¿samo¶ciowo równo¶æ
+
+\[
+\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \quad \equiv \quad Q(x,y) \: f(x) - P(x,y) \: g(y)
+\]
+\end{itemize}
+\end{exampleblock}
+
+\uncover<4->{
+\begin{columns}
+\begin{column}{0.5\textwidth}
+Je¿eli spe³nione s± za³o¿enia, to istnieje \textbf{czynnik ca³kuj±cy $\mu(x,y)$} bêd±cy \textbf{iloczynem dwóch funkcji $\varphi(x)$ i~$\psi(x)$} okre¶lonych równo¶ciami
+
+\end{column}
+
+\begin{column}{0.5\textwidth}
+\begin{eqnarray*}
+\varphi(x) & = & \exp\left(\int f(x) dx \right) \\
+\psi(y) & = & \exp\left(\int g(y) dy \right)
+\end{eqnarray*}
+\end{column}
+\end{columns}
+}
+
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przyk³ad}
+
+\begin{block}{Zadanie}
+Rozwi±zaæ równanie
+\begin{equation}
+\label{zadanie_2}
+(1 - x^2 y) + x^2(y-x) \frac{dy}{dx} = 0
+\end{equation}
+\end{block}
+
+\smallskip
+
+\uncover<2->{
+Mamy
+
+\begin{exampleblock}{}
+\[
+P(x,y) = 1 - x^2 y, \qquad Q(x,y) = x^2 (y-x)
+\]
+\end{exampleblock}
+}
+
+\uncover<3->{
+sk±d
+
+\begin{exampleblock}{}
+\[
+\frac{\partial P}{\partial y} = -x^2, \qquad \frac{\partial Q}{\partial x} = 2xy - 3x^2
+\]
+\end{exampleblock}
+}
+
+\uncover<4->{
+zatem równanie (\ref{zadanie_2}) \textbf{nie jest} równaniem \textbf{zupe³nym}.
+}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przyk³ad}
+
+Badamym czy istnieje czynnik ca³kuj±cy zale¿ny tylko od jednej zmiennej. \uncover<2->{Obliczamy
+
+\begin{exampleblock}{}
+\[
+\frac{1}{Q(x,y)} \left(\frac{\partial P}{\partial y} - \frac{\partial Q}{\partial x} \right) = \frac{1}{x^2(y-x)} (-x^2 - 2xy + 3x^3) = - \frac{2}{x}
+\]
+\smallskip
+\end{exampleblock}
+}
+\medskip
+
+\uncover<3->{
+Powy¿sze wyra¿enie \textbf{zale¿y tylko od $x$}, a wiêc czynnik ca³kuj±cy istnieje i~wyra¿a siê równo¶ci±
+
+\begin{exampleblock}{}
+\[
+\mu(x) = \exp\left\{ \int \left(-\frac{2}{x}\right) dx \right\} = \frac{1}{x^2}
+\]
+\end{exampleblock}
+}
+
+\end{frame}
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przyk³ad}
+
+Mno¿±c równianie (\ref{zadanie_2}) stronami przez czynnik ca³kuj±cy $\mu(x)$ otrzymujemy równanie
+
+\begin{exampleblock}{}
+\begin{equation}
+\label{zadanie_2a}
+\left(\frac{1}{x^2} - y\right) + (y-x) \frac{dy}{dx} = 0
+\end{equation}
+\end{exampleblock}
+
+\uncover<2->{
+Mamy
+
+\begin{exampleblock}{}
+\[
+P(x,y) = \frac{1}{x^2} - y, \qquad Q(x,y) = y-x
+\]
+\end{exampleblock}
+}
+
+\uncover<3->{
+sk±d
+
+\begin{exampleblock}{}
+\[
+\frac{\partial P}{\partial y} = -1, \qquad \frac{\partial Q}{\partial x} = -1
+\]
+\end{exampleblock}
+}
+
+\uncover<4->{
+zatem równanie (\ref{zadanie_2a}) \textbf{jest} równaniem ró¿niczkowym \textbf{zupe³nym}.
+}
+\end{frame}
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przyk³ad}
+
+Z pierwszego z warunków (\ref{warunki}) mamy
+
+\begin{exampleblock}{}
+\[
+\frac{\partial F}{\partial x} = P(x,y) \quad \Rightarrow \quad \frac{\partial F}{\partial x} = \frac{1}{x^2} - y
+\]
+\end{exampleblock}
+\uncover<2->{
+sk±d
+\begin{exampleblock}{}
+\[
+F(x,y) = \int \left(\frac{1}{x^2} - y \right) dx
+\]
+\end{exampleblock}
+}
+\uncover<3->{
+to znaczy
+\begin{exampleblock}{}
+\[
+F(x,y) = -\frac{1}{x} - xy + \varphi(y)
+\]
+\end{exampleblock}
+}
+\end{frame}
+
+
+\begin{frame}
+\frametitle{Znajdowanie czynnika ca³kuj±cego - przyk³ad}
+
+Funkcjê $\varphi(y)$ wyznaczamy z~drugiego z~warunków (\ref{warunki}); mamy
+
+\begin{exampleblock}{}
+\[
+\frac{\partial F}{\partial y} = -x + \varphi'(y) \quad \equiv \quad y-x = Q(x,y)
+\]
+\end{exampleblock}
+
+\medskip
+
+sk±d $\varphi'(y) = y$, tzn. $\varphi(y) = \frac{1}{2}y^2$.
+
+\bigskip
+
+\uncover<2->{
+\begin{alertblock}{}
+Otrzymali¶my
+
+\[
+F(x,y) = -\frac{1}{x} - xy + \frac{1}{2}y^2
+\]
+
+a wiêc wszystkie krzywe ca³kowe równania (\ref{zadanie_2}) tworz± rodzinê linii
+
+\[
+-\frac{1}{x} - xy + \frac{1}{2}y^2 = C
+\]
+\end{alertblock}
+}
+\end{frame}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\begin{frame}
+
+\begin{center}
+\textbf{\Large Dziêkujê za uwagê.}
+\end{center}
+
+\end{frame}
+
+
+\end{document}
