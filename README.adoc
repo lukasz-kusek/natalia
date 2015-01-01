@@ -2,9 +2,9 @@
 
 === ABOUT
 
-Praca dyplomowa prezentacja - Analiza struktury władania i użytkowania gruntów w gminie Stary Sącz na przykładzie wsi Barcice.
-Praca magisterska prezentacja - Analiza lokalnego rynku nieruchomości w gminie Stary Sącz.
-Równanie różniczkowe zupełne. Czynnik całkujący.
+* Praca dyplomowa prezentacja - Analiza struktury władania i użytkowania gruntów w gminie Stary Sącz na przykładzie wsi Barcice.
+* Praca magisterska prezentacja - Analiza lokalnego rynku nieruchomości w gminie Stary Sącz.
+* Równanie różniczkowe zupełne. Czynnik całkujący.
 
 === COPYRIGHT
 
